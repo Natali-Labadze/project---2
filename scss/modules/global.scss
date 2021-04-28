@@ -1,0 +1,225 @@
+html,
+body {
+    height: 100%;
+    font-family: 'Source Sans Pro';
+    font-weight: normal;
+    font-size: $mainFont;
+}
+
+.input_wrapper {
+    position: relative;
+    margin-bottom: 45px;
+    &.input_half {
+        width: 48%;
+    }
+    .input_field {
+        width: 100%;
+        @include display (block);
+        text-indent: 8px;
+        height: 50px;
+        border: none;
+        border-bottom: 2px solid #E9E9F0;
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        line-height: 25px;
+        outline: none;
+        color: $darkPurple;
+        transition: 0.2s linear;
+        &::placeholder {
+            color: $white;
+        }
+        &:focus {
+            border-color: $blueNormal;
+            caret-color: $blueNormal;
+            &::placeholder {
+                color: $darkBlue;
+                opacity: 0.5;
+            }
+        }
+        &:focus~.input_label,
+        &:not(:placeholder-shown)~.input_label {
+            color: $blueNormal;
+            top: -16px;
+            bottom: 10px;
+            left: 8px;
+            font-size: 13px;
+            opacity: 1;
+        }
+        &:hover {
+            border-color: $darkBlue;
+        }
+        &.error {
+            border-color: $redNormal;
+            &:focus~.input_label,
+            &:not(:placeholder-shown)~.input_label {
+                color: $redNormal;
+            }
+        }
+        &.success {
+            border-color: $greenNormal;
+            &:focus~.input_label,
+            &:not(:placeholder-shown)~.input_label {
+                color: $greenNormal;
+            }
+        }
+        &[disabled] {
+            border-bottom: 1px dashed $purpleDisaled;
+            background-color: transparent;
+        }
+    }
+    .input_label {
+        position: absolute;
+        pointer-events: none;
+        left: 8px;
+        top: 15px;
+        transition: 0.2s ease all;
+        text-transform: capitalize;
+    }
+    i {
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        visibility: hidden;
+    }
+    small {
+        position: absolute;
+        font-size: 10px;
+        visibility: hidden;
+    }
+    &.success input {
+        border-bottom-color: $greenNormal;
+    }
+    &.error input {
+        border-bottom-color: $redNormal;
+    }
+    &.success small {
+        visibility: visible;
+        color: $greenNormal;
+    }
+    &.error small {
+        visibility: visible;
+        color: $redNormal;
+    }
+    &.success .fa-check-circle {
+        visibility: visible;
+        color: $greenNormal;
+    }
+    &.error .fa-check-circle {
+        visibility: visible;
+        color: $redNormal;
+    }
+}
+
+.button_filled {
+    width: 185px;
+    height: 50px;
+    cursor: pointer;
+    background-color: $darkBlue;
+    color: $white;
+    border: 2px solid $darkBlue;
+    border-radius: 4px;
+    text-transform: capitalize;
+    font-size: 18px;
+    line-height: 25px;
+    transition: 0.2s linear;
+    outline: none;
+    &:hover {
+        background-color: $purpleActive;
+        border-color: $purpleActive;
+    }
+    &[disabled] {
+        background-color: $purpleDisaled;
+        border-color: $purpleDisaled;
+    }
+}
+
+.button_outline {
+    width: 185px;
+    height: 50px;
+    cursor: pointer;
+    background-color: $white;
+    color: $darkBlue;
+    border: 2px solid $darkBlue;
+    border-radius: 4px;
+    text-transform: capitalize;
+    font-size: 18px;
+    line-height: 25px;
+    transition: 0.2s linear;
+    outline: none;
+    &:hover {
+        border-color: $purpleActive;
+    }
+    &[disabled] {
+        border-color: $purpleDisaled;
+    }
+}
+
+.blue_button {
+    height: 34px;
+    padding: 0 36px;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: $blueNormal;
+    border-radius: 4px;
+    outline: none;
+    @include display (flex);
+    @include flex(center, center);
+    color: $white;
+    @include mobile {
+        height: 30px;
+        padding: 0 20px;
+    }
+    &:hover {
+        background-color: $blueActive;
+    }
+    &[disabled] {
+        background-color: $blueDisabled;
+    }
+}
+
+.form_checkbox {
+    .check_box {
+        position: absolute;
+        opacity: 0;
+    }
+    .check_box+.checkbox_label {
+        position: relative;
+        cursor: pointer;
+        @include display (flex);
+        align-items: center;
+        color: $darkBlue;
+        text-transform: capitalize;
+        line-height: 25px;
+        &::before {
+            content: "";
+            @include display (flex);
+            margin-right: 15px;
+            width: 18px;
+            height: 18px;
+            border: 1px solid $checkBoxColor;
+            border-radius: 4px;
+        }
+    }
+    .check_box:hover+.checkbox_label {
+        &::before {
+            border-color: $blueNormal;
+        }
+    }
+    .check_box:checked+.checkbox_label {
+        &::before {
+            border-color: $blueNormal;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 8px;
+            top: 6px;
+            left: 7px;
+            border: solid $blueNormal;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    }
+}

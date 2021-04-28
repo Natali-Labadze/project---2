@@ -1,0 +1,30 @@
+@mixin display ($align) {
+    display: $align;
+}
+
+@mixin flex($horizontal, $vertical) {
+    justify-content: $horizontal;
+    align-items: $vertical;
+}
+
+@mixin border($border) {
+    border-radius: $border;
+}
+
+@mixin mobile {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: 1600px) {
+        @content;
+    }
+}

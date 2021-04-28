@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>sign in and sign up</title>
+</head>
+
+<body>
+    <div class="mail_info">
+        <div class="bg_image">
+        </div>
+        <div class="hero">
+            <div class="form_box">
+                <form id="login">
+                    <h2 class="smart_title">
+                        smartacademy
+                    </h2>
+                    <p class="smart_subtitle">
+                        Welcome back! Please login to your account.
+                    </p>
+                    <div class="input_wrapper">
+                        <input id="username" type="text" class="input_field" placeholder="Username">
+                        <span class="input_label">username</span>
+                        <i class="fa fa-check-circle"></i>
+                        <small class="messages"></small>
+                    </div>
+                    <div class="input_wrapper">
+                        <input id="password" type="password" class="input_field" placeholder="Password">
+                        <span class="input_label">password</span>
+                        <i class="fa fa-check-circle"></i>
+                        <small class="messages"></small>
+                    </div>
+                    <div class="form_row check">
+                        <div class="form_checkbox">
+                            <input type="checkbox" name="checkbox" id="remember" class="check_box">
+                            <label class="checkbox_label" for="remember">remember me
+                            </label>
+                        </div>
+                        <a class="password_recovery" href="#">forgot password</a>
+                    </div>
+                    <div class="form_row">
+                        <button type="submit" class="button_filled">
+                                login
+                        </button>
+                        <button type="button" class="button_outline" onclick="getSignUp()">
+                                sign up
+                        </button>
+                    </div>
+                </form>
+                <form id="register" style="display: none">
+                    <h2 class="smart_title">
+                        smartacademy
+                    </h2>
+                    <p class="smart_subtitle">
+                        Please complete to create your account
+                    </p>
+                    <div id="userFirstName" class="user_registr ">
+                        <div class="form_row">
+                            <div class="input_wrapper input_half ">
+                                <input id="first_name" type="text " class="input_field " placeholder="First name ">
+                                <span class="input_label">First name</span>
+                                <i class="fa fa-check-circle"></i>
+                                <small class="messages"></small>
+                            </div>
+                            <div class="input_wrapper input_half  ">
+                                <input id="last_name" type="text " class="input_field " placeholder="Last name ">
+                                <span class="input_label">Last name</span>
+                                <i class="fa fa-check-circle"></i>
+                                <small class="messages"></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_wrapper">
+                        <input id="usernameRegistr" type="text " class="input_field" placeholder="Username ">
+                        <span class="input_label">username</span>
+                        <i class="fa fa-check-circle"></i>
+                        <small class="messages"></small>
+                    </div>
+                    <div class="input_wrapper">
+                        <input id="email" type="email" class="input_field " placeholder="Email ">
+                        <span class="input_label">email</span>
+                        <i class="fa fa-check-circle"></i>
+                        <small class="messages"></small>
+                    </div>
+                    <div class="input_wrapper">
+                        <input id="passwordRegistr" type="password" class="input_field" placeholder=" Password ">
+                        <span class="input_label">password</span>
+                        <i class="fa fa-check-circle"></i>
+                        <small class="messages"></small>
+                    </div>
+                    <div class="input_wrapper">
+                        <input id="confPassRegistr" type="password" class="input_field " placeholder="Confirm Password ">
+                        <span class="input_label">confirm password</span>
+                        <i class="fa fa-check-circle"></i>
+                        <small class="messages"></small>
+                    </div>
+                    <div class="form_checkbox">
+                        <input type="checkbox" name="checkbox" id="check_box" class="check_box">
+                        <label class="checkbox_label" for="check_box">i agree with terms and conditions
+                        </label>
+                        <span class="error_check" id="error_check" style="display:none; color:red">please, agree with terms and conditions</span>
+                    </div>
+                    <div class="form_row_centered">
+                        <button id="btn" type="submit" class="button_filled">
+                        sign up
+                        </button>
+                        <a class="sign_into" href="sign.html">Already have an account? Sign in</a>
+                    </div>
+                </form>
+            </div>
+            <a href="#" class="terms_privacy">Term of use. Privacy policy</a>
+        </div>
+    </div>
+    <script src="mail.js "></script>
+</body>
+
+</html>
